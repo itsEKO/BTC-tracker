@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="/static/tailwind.css">
     <title>Crypto Prices | Created by: Isaac Spinks</title>
 </head>
-<body class="bg-black text-white w-screen">
-<div class="h-screen">
+<body class="bg-black text-white">
+<div>
     <nav class="flex items-center justify-between flex-wrap bg-black p-6">
         <div class="flex items-center flex-shrink-0 text-white mr-6">
-          <span class="font-semibold text-xl tracking-tight">CryptoPrice</span>
+          <span class="font-semibold text-xl tracking-tight text-green-200">CryptoPrice</span>
         </div>
         <div class="block lg:hidden">
           <button id="3bars" class="flex items-center px-3 py-2 border rounded text-white hover:text-green hover:border-green">
@@ -20,13 +20,13 @@
         </div>
         <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
           <div class="text-sm lg:flex-grow">
-            <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-green hover:border-green mr-4">
+            <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-green-200 mr-4">
               About
             </a>
-            <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">
+            <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-green-200 mr-4">
               APY Calc
             </a>
-            <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white">
+            <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-green-200">
               Login
             </a>
           </div>
@@ -34,27 +34,47 @@
           </div>
         </div>
       </nav>
-    <div id="body-content" class="container h-screen w-screen p-3">
-        <h5 class="text-sm text-opacity-75">in the past 30 days</h5>
-        <h3 id='marketCheck' class="text-xl"></h3>
-        <div class="lg:container w-screen h-50">
+    <div id="body-content" class="lg:container pt-4 h-screen w-screen mx-auto">
+        <h5 class="text-sm text-opacity-75 font-semibold">in the past 30 days</h5>
+        <h3 id='marketCheck' class="text-xl text-bold"></h3>
+        <div id="chart-container" class="md:container mx-auto pt-20 w-screen h-30 w-60">
           <canvas id="portfolioChart"></canvas>
         </div>
 
-        <div class="container w-screen h-40 box-border border-2">
-            crypto info / scroll bar
-        </div>
-        <div class="container mt-5">
-            <div>
-                <button class="bg-gray-800 hover:bg-gray-900 text-white font-bold py-1 px-3 rounded-full">All Assets</button>
-                <button class="bg-gray-800 hover:bg-gray-900 text-white font-bold py-1 px-3 rounded-full">Gainers</button>
-                <button class="bg-gray-800 hover:bg-gray-900 text-white font-bold py-1 px-3 rounded-full">Losers</button>
-                <button class="bg-gray-800 hover:bg-gray-900 text-white font-bold py-1 px-3 rounded-full">Wallet</button>
+        <div class="bg-black overflow-hidden w-3/4 md:max-w-screen mx-auto box-border border-2 mt-10">
+          <div class="max-w-7xl mx-auto">
+            <div class="relative z-10 pb-8 bg-black sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+              <div>
+                <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
+                  <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
+                    <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
+                      <a href="#" class="font-medium text-gray-400 hover:text-white">All Assets</a>
+
+                      <a href="#" class="font-medium text-gray-400 hover:text-white">Gainers</a>
+
+                      <a href="#" class="font-medium text-gray-400 hover:text-white">Losers</a>
+
+                      <a href="#" class="font-medium text-gray-400 hover:text-white">Wallet</a>
+
+                      <a href="#" class="font-medium text-green-400 hover:text-white">New</a>
+                    </div>
+                  </nav>
+                  <div class="flex space-x-4">
+                    <div class="box-border border border-gray-400-300 bg-white text-black h-40 w-40 mt-4 rounded-md">
+                      <h1 class="text-center font-bold text-lg">Most Popular</h1>
+                      <div class="mt-8">
+                        <img src="static/img/Bitcoin.svg" class="h-8 w-8 mx-auto mb-4">
+                        <h1 class="text-center font-black text-lg">Bitcoin</h1>
+                        <p id="btc-price-cur" class="text-center font-bold text-sm"></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="box-border h-32 w-full border-2">
-                crypto coins   
-            </div>
+          </div>
         </div>
+        <div class="h-10"></div>
         
     </div>
 </div>
