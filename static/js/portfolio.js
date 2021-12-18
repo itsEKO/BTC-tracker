@@ -1,6 +1,4 @@
-
 function getUrl(){
-    //gets dates of the last 7 days (ugly code)
     const dates = [...Array(7)].map((_, i) => {
         const d = new Date()
         d.setDate(d.getDate() - i)
@@ -49,9 +47,9 @@ function createChart(btcPrices, btcDates){
     var change = changeAmount / btcPrices[29] * 100;
 
     if (change > 0){
-        marketCheck.innerHTML = "Market is up %" + change;
+        marketCheck.innerHTML = "Market is up " + parseFloat(change).toFixed(2) + "%";
     }else{
-        marketCheck.innerHTML = "Market is down %" + change;
+        marketCheck.innerHTML = "Market is Down " + parseFloat(change).toFixed(2) + "%";
     }
 
     //chart element
@@ -88,13 +86,23 @@ async function updatePrice(){
     const response = await fetch(curUrl)
     const data = await response.json();
     var price = data.bpi.USD.rate
-    console.log(price)
     
     curPrice.innerHTML = '$' + price;
 
 }
 
+//needs to be solved FIX IT NERD!!! nav bar is broken when resizing the window and pressing the three bar button!!!!
 window.onload = function(){
     getData();
     updatePrice();
+}
+
+//adds function to the three bar button for mobile devices
+function threeBars(){
+    var x = document.getElementById("myLinks")
+    if (x.style.display == "block"){
+        x.style.display = "none";
+    }else{
+        x.style.display = "block";
+    }
 }

@@ -14,12 +14,12 @@
           <span class="font-semibold text-xl tracking-tight text-green-200">CryptoPrice</span>
         </div>
         <div class="block lg:hidden">
-          <button id="3bars" class="flex items-center px-3 py-2 border rounded text-white hover:text-green hover:border-green">
+          <button id="3bars" onclick="threeBars()" class="flex items-center px-3 py-2 border rounded text-white hover:text-green hover:border-green">
             <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
           </button>
         </div>
         <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-          <div class="text-sm lg:flex-grow">
+          <div id="myLinks" class="text-sm lg:flex-grow">
             <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-green-200 mr-4">
               About
             </a>
@@ -41,42 +41,42 @@
           <canvas id="portfolioChart"></canvas>
         </div>
 
-        <div class="bg-black overflow-hidden w-3/4 md:max-w-screen mx-auto box-border border-2 mt-10">
-          <div class="max-w-7xl mx-auto">
-            <div class="relative z-10 pb-8 bg-black sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-              <div>
+        <div class="bg-black overflow-hidden w-3/4 mx-auto h-fit max-w-3/4 box-border border-2 mt-10 relative z-10 pb-8 sm:pb-16 md:pb-20 lg:pb-28 xl:pb-32">
                 <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
-                  <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
-                    <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
-                      <a href="#" class="font-medium text-gray-400 hover:text-white">All Assets</a>
+                  <nav class="relative flex items-center justify-center sm:h-10 lg:justify-start" aria-label="Global">
+                    <div class="flex justify-evenly md:block md:ml-10 md:pr-4 space-x-4 md:space-x-8">
+                      <a onclick="" class="font-medium text-gray-400 hover:text-white">All Assets</a>
 
-                      <a href="#" class="font-medium text-gray-400 hover:text-white">Gainers</a>
+                      <a onclick="" class="font-medium text-gray-400 hover:text-white">Gainers</a>
 
-                      <a href="#" class="font-medium text-gray-400 hover:text-white">Losers</a>
+                      <a onclick="" class="font-medium text-gray-400 hover:text-white">Losers</a>
 
-                      <a href="#" class="font-medium text-gray-400 hover:text-white">Wallet</a>
+                      <a onclick="" class="font-medium text-gray-400 hover:text-white">Wallet</a>
 
-                      <a href="#" class="font-medium text-green-400 hover:text-white">New</a>
+                      <a onclick="" class="font-medium text-green-400 hover:text-white">New</a>
                     </div>
                   </nav>
-                  <div class="flex space-x-4">
-                    <div class="box-border border border-gray-400-300 bg-white text-black h-40 w-40 mt-4 rounded-md">
-                      <h1 class="text-center font-bold text-lg">Most Popular</h1>
-                      <div class="mt-8">
-                        <img src="static/img/Bitcoin.svg" class="h-8 w-8 mx-auto mb-4">
-                        <h1 class="text-center font-black text-lg">Bitcoin</h1>
-                        <p id="btc-price-cur" class="text-center font-bold text-sm"></p>
+
+                  <div class="p-4 bg-black grid grid-cols-3 md:grid-cols-4 grid-flow-row gap-2 w-full h-full">
+<!--Crypto Cards-->
+                      <div class="box-border border border-gray-400 bg-white text-black rounded-md h-20 w-20 md:h-40 md:w-40">
+                        <h1 class="text-center font-black text-md md:text-xl">Bitcoin</h1>
+                        <div class="md:mt-8">
+                          <img src="static/img/Bitcoin.svg" class="md:h-12 md:w-12 h-4 w-4 mx-auto mt-2 md:mb-4">
+                          <p id="btc-price-cur" class="text-center mt-2 md:mt-4 font-bold text-sm md:text-lg"></p>
+                        </div>
                       </div>
-                    </div>
-                  </div>
+<!--End Of One Card-->
+
+
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
         <div class="h-10"></div>
-        
-    </div>
+      
+      
+      </div>
+
+
 </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
