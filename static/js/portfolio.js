@@ -91,7 +91,7 @@ async function updatePrice(){
 
 }
 
-//needs to be solved FIX IT NERD!!! nav bar is broken when resizing the window and pressing the three bar button!!!!
+//needs to be solved nav bar is broken when resizing the window and pressing the three bar button!!!!
 window.onload = function(){
     getData();
     updatePrice();
